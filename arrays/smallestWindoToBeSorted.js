@@ -42,15 +42,14 @@ function findSmallesWindowToBeSortedEnhanced(numbers){
         if(currentValue<max_seen){
             right = index;
         }
-    }
-
+    } // O(n)
     for(let index=numbers.length-1;index>0;index--){
         let currentValue = numbers[index];
         min_seen = Math.min(min_seen,currentValue)
         if(currentValue>min_seen){
             left=index
         }
-    }
+    } // O(n)
 return [left,right]
 }
 
