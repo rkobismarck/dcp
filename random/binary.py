@@ -12,14 +12,16 @@ def binary_search(arr, key):
             return True
         else:
             return False
-    mid     = math.ceil(len(arr)/2)
+    mid     = int(math.ceil(len(arr)/2))
     value   = arr[mid] 
     if value>key:
         return binary_search(arr[0:mid], key)
     else:
         return binary_search(arr[mid:len(arr)], key) 
 
-arr     = [0,1,2,4,8,9,10,100]
+
+# Parameters to perform the search
+numbers = [0,1,2,4,8,9,10,100]
 key     = 4
 output  = binary_search(numbers,key)
-print(output);
+print(output)
