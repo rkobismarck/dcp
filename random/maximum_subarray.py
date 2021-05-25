@@ -14,5 +14,18 @@ def maximum_subarray_sum(numbers):
                 acc = acc + currentValue
     return acc
 
+def maximum_subarray_sum_dp(numbers):
+    sums = []
+    for index in range(len(numbers)):
+        actual_value = numbers[index]
+        if len(sums) == 0:
+            best_value = actual_value
+        else:
+            best_value = sums[index-1] + actual_value
+        sums.append(max(actual_value,best_value)) 
+    return max(sums)
+
+
 input = [34, -50, 42, 14,-5, 86]
 print(maximum_subarray_sum(input))
+print(maximum_subarray_sum_dp(input))
